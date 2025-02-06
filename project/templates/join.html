@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Join a group
+{% endblock %}
+
+{% block main %}
+    <div class="less_empty"></div>
+    <p style="font-size: 20px;"><b><span class="blue">Join</span><span class="yellow">&nbsp;an existing group!</span></b></p>
+    <br>
+    <form action="/join" method="post">
+        <div>
+            <input name="group_name" autocomplete="off" placeholder="Group name" type="text">
+        </div>
+        <br>
+        <div>
+            <input name="group_pw" autocomplete="off" placeholder="Password" type="password">
+        </div>
+        <br>
+        <div>
+            <button type="submit" class="index_buttons_one"><b>Join! </b></button>
+        </div>
+    </form>
+    <p class="error">{{ error }}</p>
+    <p><a href="recover">Forgot password?</a></p>
+    <br>
+    <footer class="yellow">Don't have an existing group? <a href="create">Create</a> one!</footer>
+{% endblock%}

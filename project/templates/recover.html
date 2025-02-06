@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Recover password
+{% endblock %}
+
+{% block main %}
+<div style="height: 25vh;"></div>
+
+<div style="display: block; height: 30vh;" id="phone_number">
+    <p style="font-size: 20px;"><b><span class="blue">Recover</span><span class="yellow">&nbsp;password</span></b></p>
+
+    <form action="/recover" method="post">
+        <input name="group_name" autocomplete="off" placeholder="Group name" type="username">
+        <br>
+        <br>
+        <input name="phone_number" autocomplete="off" placeholder="Phone number" type="password">
+        <br>
+        <p class="error">{{ error }}</p>
+        
+        <button type="submit" class="index_buttons_one"><b>Recover</b></button>
+    </form>
+    <br>
+    <button onclick="switch_to_email()" class="emailphone"><u>Recover via email address instead</u></button>
+</div>
+
+<div style="display: none; height: 30vh;" id="email">
+    <p style="font-size: 20px;"><b><span class="yellow">Recover</span><span class="blue">&nbsp;password</span></b></p>
+
+    <form action="/recover" method="post">
+        <input name="group_name" autocomplete="off" type="username" placeholder="Group name">
+        <br>
+        <br>
+        <input name="email" autocomplete="off" type="password" placeholder="Email address">
+        <br>
+        <p class="error">{{ error }}</p>
+
+        <button type="submit" class="index_buttons_two"><b>Recover</b></button>
+    </form>
+    <br>
+    <button onclick="switch_to_phone()" class="emailphone"><u>Recover via phone number instead</u></button>
+</div>
+
+
+<script>
+    function switch_to_email() {
+        document.getElementById("phone_number").style.display = "none";
+        document.getElementById("email").style.display = "block";
+    }
+
+    function switch_to_phone() {
+        document.getElementById("phone_number").style.display = "block";
+        document.getElementById("email").style.display = "none";
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,372 @@
+main {
+    text-align: center;
+}
+
+nav {
+    background-color: #555555;
+}
+
+html, head, body {
+    background-color: #000000;
+}
+
+.special {
+    height: 10vh;
+    width: 100vw;
+    display: grid;
+}
+
+.index_container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.error {
+    color: red;
+}
+
+.empty {
+    height: 25vh;
+}
+
+.less_empty {
+    height: 18vh;
+}
+
+#hover span {
+    background-color: #ffffff;
+    color: #ffffff;
+}
+
+#hover span:hover {
+    background-color: #000000;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+table tr {
+    border-bottom: 1px #d99d26;
+    height: 50px;
+}
+
+table tr:last-child {
+    border-bottom: None;
+}
+
+#add_button {
+    margin: 1vh 1vw;
+    background-color: #0000ff;
+    border-radius: 12px;
+    border: 0.5px solid #000000;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 0.5% 25%;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+
+#add_button:hover {
+    margin: 1vh 1vw;
+    background-color: #0000dd;
+    border-radius: 12px;
+    border: 1px solid #0000dd;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 22px;
+    padding: 0.5% 25%;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+
+.trash {
+    color: #ff0000;
+}
+
+.trash_press {
+    background-color: #000000;
+    border-radius: 12px;
+    border: 0px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ff0000;
+    padding: 0 0;
+}
+
+.trash_press:hover {
+    background-color: #000000;
+    border-radius: 12px;
+    border: 0px;
+    display: inline-block;
+    cursor: pointer;
+    color: #cc0000;
+    padding: 0 0;
+}
+
+.status_press {
+    background-color: #000000;
+    border-radius: 12px;
+    border: 2px;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0 0;
+}
+
+.changer {
+    font-size: 24px;
+    background-color: #000000;
+    border-radius: 12px;
+    border: 0px;
+    display: inline-block;
+    cursor: pointer;
+    color: #0000ff;
+    padding: 1 1;
+}
+
+.changer:hover {
+    background-color: #000000;
+    border-radius: 12px;
+    border: 0px;
+    display: inline-block;
+    cursor: pointer;
+    color: #0000cc;
+    padding: 1 1;
+}
+
+
+.blue {
+    color: #000bcb;
+}
+
+.yellow {
+    color: #d99d26;
+}
+
+.index_buttons_one {
+    border-radius: 12px;
+    border: 1px solid black;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #000bcb;
+    color: #d99d26;
+    padding: 0.25% 5%;
+    text-shadow: 0px 1px 0px #2f6627;
+    }
+
+
+.index_buttons_two {
+    border-radius: 12px;
+    border: 1px solid black;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #d99d26;
+    color: #000bcb;
+    padding: 0.25% 5%;
+    text-shadow: 0px 1px 0px #2f6627;
+    }
+
+.index_buttons_one:hover {
+    border-radius: 12px;
+    border: 1px #000bcb;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: #000bcb;
+    color: #d99d26;
+    padding: 0.25% 5%;
+    text-shadow: 0px 1px 0px #2f6627;
+    }
+
+.index_buttons_two:hover {
+    border-radius: 12px;
+    border: 1px #d99d26;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: #d99d26;
+    color: #000bcb;
+    padding: 0.25% 5%;
+    text-shadow: 0px 1px 0px #2f6627;
+    }
+
+th {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.last_action {
+    text-align: center;
+    background-color: #aaaaff;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.plusminus {
+    display: inline-block;
+}
+
+.formPopup {
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid white;
+    border-radius: 56px;
+    width: 60vw;
+    background-color: #5b5d63
+}
+
+.formPopup button.no {
+    border-radius: 12px;
+    display: inline-block;
+    border: 1px #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0.5% 5%;
+    background-color: #ff0000;
+    color: #000000;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+
+.formPopup button.no:hover {
+    border-radius: 12px;
+    border: 1px #cc0000;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0.5% 5%;
+    background-color: #cc0000;
+    color: #000000;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+
+.formPopup button.yes {
+    border-radius: 12px;
+    display: inline-block;
+    border: 1px #00dd00;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0.5% 5%;
+    background-color: #00dd00;
+    color: #000000;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+
+.formPopup button.yes:hover {
+    border-radius: 12px;
+    border: 1px #00bb00;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0.5% 5%;
+    background-color: #00bb00;
+    color: #000000;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+
+input#quantity {
+    width: 20vw;
+    border-radius: 12px;
+    border: 1px #2e54e5;
+}
+
+input#item {
+    width: 20vw;
+    border-radius: 12px;
+    border: 1px #2e54e5;
+}
+
+#description_buttons {
+    background-color: #cccccc;
+    width: 4.5vw;
+    height: 3.4vh;
+}
+
+#description_buttons:hover {
+    background-color: #999999;
+    width: 4.5vw;
+    height: 3.4vh;
+}
+
+#image {
+    width: 4.5vw;
+}
+
+#image_name {
+    width: 4.5vw;
+}
+
+.img {
+    height: 8vh;
+    width: 4.5vw;
+}
+
+#description {
+    height: 3.4vh;
+    width: 12.7vw;
+}
+
+.status_button {
+    background-color: #555555;
+    border: 0px;
+    border-radius: 12px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.status_button:hover {
+    background-color: #333333;
+    border: 0px;
+    border-radius: 12px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.emailphone {
+    background-color: #000000;
+    border: 0px;
+    display: inline-block;
+    cursor: pointer;
+    color: #0000ff;
+}
+
+.emailphone:hover {
+    background-color: #000000;
+    border: 0px;
+    display: inline-block;
+    cursor: pointer;
+    color: #0000dd;
+}
+
+#linker_p {
+    color: #d99d26;
+}
+
+#linker_p:hover {
+    color: #b77b04;
+}
+
+.success {
+    text-align: center;
+    background-color: #aaaaff;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+#welcome_q {
+    border-radius: 12px;
+    background-color: pink;
+}

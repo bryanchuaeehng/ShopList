@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Appender
+{% endblock %}
+
+{% block main %}
+    <div style="text-align: center;">
+        <br>
+        <p style="font-size: 30px; color: #ffffff;"><b>Appender</b></p>
+        <p style="color: #cccccc;">Switch to <a href="shopper">shopper</a>&nbsp;instead?</p>
+    </div>
+    <div class="last_action">
+        <b>
+            {{ last_action }}
+        </b>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Image</th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for item in pf %}
+            <tr>
+                <td style="color: #ffffff;">
+                    {% if st[item] == "pending" %}
+                        <span style="color: orange;"> Pending &#128339; </span>
+                    {% elif st[item] == "done" %}
+                        <span style="color: green;"> Done &#9989; </span>
+                    {% elif st[item] == "oos" %}
+                        <span style="color: yellow;"> Out Of Stock &#x2639; </span>
+                    {% else %}
+                        <span style="color: red;"> Cancelled &#x274c; </span>
+                    {% endif %}
+                </td>
+                <td style="color: #ffffff;">
+                {% if ig[item] %}
+                    <image class="img" alt="{{ item }}" src="{{ ig[item] }}">
+                {% else %}
+                    <form action="/appender" method="post" class="plusminus">
+                        <input style="font-size: 14px;" autocomplete="off" type="text" placeholder="Image url" name="image" id="image">
+                        <input type="hidden" value="{{ item }}" name="image_name" id="image_name">
+                        <br>
+                        <button type="submit" id="description_buttons">+ Add </button>
+                    </form>
+                {% endif %}
+                </td>
+                <td style="color: #ffffff;">{{ item }}</td>
+                <td>
+                    <form action="/appender" method="post" class="plusminus">
+                        <input name="plus" type="hidden" value="{{ item }}">
+                        <button type="submit" class="changer">+</button>
+                    </form>
+
+                    <span style="color: #ffffff;">{{ pf[item] }}</span>
+
+                    <form action="/appender" method="post" class="plusminus">
+                        <input name="minus" type="hidden" value="{{ item }}">
+                        <button type="submit" class="changer">-</button>
+                    </form>
+                </td>
+                <td class="trash">
+                    <form action="/appender" method="post" class="plusminus">
+                        <input name="delete" type="hidden" value="{{ item }}">
+                        <input name="delete_qty" type="hidden" value="{{ pf[item] }}">
+                        <button type="submit" class="trash_press">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                            </svg>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td style="color: #999999;">
+                    {% if df[item] %}
+                        Description: {{ df[item] }}
+                    {% else %}
+                        <form action="/appender" method="post" class="plusminus">
+                            <input autocomplete="off" type="text" placeholder="Add description" name="description" id="description">
+                            <input type="hidden" value="{{ item }}" name="description_item_name" id="description_item_name">
+                            <button type="submit" id="description_buttons">+ Add </button>
+                        </form>
+                    {% endif %}
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+    <p class="yellow" style="font-size: 18px">{{ empty }}</p>
+    <footer>
+        <button id="add_button" onclick="openclose()">+ Add item</button>
+    </footer><br><br>
+
+
+    <div class="loginPopup">
+        <div class="formPopup" style="display: none" id="popupForm">
+            <br>
+
+        <form action="/appender" method="post" class="formContainer">
+            <h2><b>Append to list</b></h2>
+            <br>
+            <input autocomplete="off" type="text" id="item" placeholder="Item" name="add_item_foot" required>
+            <br><br>
+            <input autocomplete="off" type="number" min="1" max="99" id="quantity" placeholder="Quantity" name="quantity_item_foot" required>
+            <br><br>
+            <button class="no" type="button" onclick="closeAppend()"><b>Close</b></button>
+            &nbsp;&nbsp;&nbsp;
+            <button class="yes" type="submit" onclick="closeAppend()"><b>+ Add!</b></button>
+            <br><br>
+        </form>
+        </div>
+      </div>
+      <script>
+        function openAppend() {
+            document.getElementById("popupForm").style.display = "block";
+        }
+        function closeAppend() {
+            document.getElementById("popupForm").style.display = "none";
+        }
+        function openclose() {
+            if (document.getElementById("popupForm").style.display == "block")
+            {
+                document.getElementById("popupForm").style.display = "none";
+            }
+            else
+            {
+                document.getElementById("popupForm").style.display = "block";
+            }
+        }
+      </script>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create a group
+{% endblock %}
+
+{% block main %}
+    <div class="less_empty"></div>
+    <div style="font-size: 20px;"><b><span class="yellow">Create&nbsp;</span><span class="blue">a group!</span></b></div>
+    <br><br>
+    <form action="/create" method="post">
+        <div>
+            <input id="group_name" name="group_name" autocomplete="off" placeholder="Group name" type="text">
+        </div>
+        <br>
+        <div>
+            <input id="group_pw" name="group_pw" autocomplete="off" placeholder="Password" type="password">
+        </div>
+        <br>
+        <div>
+            <input id="confirmation" name="confirmation" autocomplete="off" placeholder="Confirm password" type="password">
+        </div>
+        <br>
+        <div>
+            <button type="submit" class="index_buttons_two"><b>Create!</b></button>
+        </div>
+    </form>
+    <p class="error">{{ error }}</p>
+    <p><a href="recover">Forgot password?</a></p>
+    <br>
+    <footer class="blue">Already have an existing group? <a href="join">Join</a> one!</footer>
+{% endblock%}
+

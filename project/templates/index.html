@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome!
+{% endblock %}
+
+{% block main %}
+        <div class="empty"></div>
+        <div>
+            <p style="font-family: Geneva, Verdana, sans-serif; font-size: 36px;"><b><span class="blue">Shop</span><span class="yellow">List!</span></b></p>
+            <br>
+            <form action="/" method="post">
+                <input name="choice1" type="hidden" value="join">
+                <button class="index_buttons_one"><b>Join a ShopList group</b></button>
+            </form>
+            <br><br>
+            <form action="/" method="post">
+                <input name="choice2" type="hidden" value="create">
+                <button class="index_buttons_two"><b>+ Create a ShopList group</b></button>
+            </form>
+        </div>
+
+{% endblock %}

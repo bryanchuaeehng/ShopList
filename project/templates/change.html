@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change password
+{% endblock %}
+
+{% block main %}
+<p class="success"><b>{{ success }}</b></p>
+<div style="height: 22vh;"></div>
+
+<div style="display: block; height: 30vh;" id="phone_number">
+
+
+    <p style="font-size: 20px;"><b><span class="blue">Change</span><span class="yellow">&nbsp;password</span></b></p>
+
+    <form action="/change" method="post">
+        <input name="new_pw_one" autocomplete="off" placeholder="New password" type="password">
+        <br>
+        <br>
+        <input name="new_pw_two" autocomplete="off" placeholder="Confirm new password" type="password">
+        <br>
+        <p class="error">{{ error }}</p>
+
+        <button type="submit" class="index_buttons_one"><b>Change</b></button>
+    </form>
+</div>
+{% endblock %}

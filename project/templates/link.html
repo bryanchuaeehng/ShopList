@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Link
+{% endblock %}
+
+{% block main %}
+<div style="height: 25vh;"></div>
+
+<div style="display: block; height: 30vh;" id="phone_number">
+    <p style="font-size: 20px;"><b><span class="blue">Link</span><span class="yellow">&nbsp;phone number/email address</span></b></p>
+
+    <form action="/link" method="post">
+        <input name="phone" autocomplete="off" placeholder="Phone number" type="text">
+        <br>
+        <br>
+        <input name="email" autocomplete="off" placeholder="Email address" type="text">
+        <br>
+        <p class="error">{{ error }}</p>
+
+        <button type="submit" class="index_buttons_one"><b>Link</b></button>
+    </form>
+</div>
+{% endblock %}

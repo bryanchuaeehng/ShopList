@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome!
+{% endblock %}
+
+{% block main %}
+    <p class="success"><b>{{ success }}</b></p>
+    <div class="less_empty"></div>
+    <p style="font-size: 34px"><span id="welcome_q"><span class="blue"><b>Welcome to&nbsp;</b></span><span class="yellow"><b>{{ group_name }}'s!</b></span></span></p>
+    <!-- hover for password -->
+    <div id="hover" class="yellow">Group password:&nbsp;<span>&nbsp;{{ group_pw }}&nbsp;</span></div>
+
+    <br>
+    <br>
+    <div class="blue"><a href="change">Change password</a></div>
+
+    {% if link == '1' %}
+    <div class="yellow"><a href="link" id="linker_p">&#10024;!! Link phone number and/or email address</a></div>
+    {% else %}
+    <div class="yellow"> Successfully linked phone number and email address! <a href="link" id="linker_p"> Change?</a></div>
+    {% endif %}
+    <div style="height: 15vh;"></div>
+
+        <div>
+            <p style="font-size: 20px" class="blue"><b>Hello! What are you looking for today?</b></p>
+            <br>
+            <form action="/homepage" method="post">
+                <button name="choice1" type="submit" value="shopper" class="index_buttons_two"><b>Shopper</b></button>
+                <button name="choice1" type="submit" value="appender" class="index_buttons_one"><b>Appender</b></button>
+            </form>
+        </div>
+{% endblock %}
